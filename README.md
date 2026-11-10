@@ -21,12 +21,12 @@ You only need a free GitHub account and a web browser. No coding or command line
 ### 2. Upload the files
 
 1. On the new, empty repository page, click the link **uploading an existing file**.
-2. Open the `pagecraft` folder on your computer, select **everything inside it** (`index.html`, `manifest.webmanifest`, `sw.js`, `README.md` and the `icons` folder), and drag it all onto the upload area.
-   - Upload the *contents* of the folder, not the `pagecraft` folder itself. `index.html` must sit at the top level of the repository.
-   - Dragging the `icons` folder keeps it as a folder on GitHub. This works in Chrome, Edge and Firefox. If `icons/` is missing after you commit, see **The icon is missing** under Troubleshooting.
+2. Open the `pagecraft` folder on your computer, select **all the files inside it** (there are no subfolders), and drag them onto the upload area.
+   - Upload the *files*, not the `pagecraft` folder itself. Everything must sit at the top level of the repository.
+   - Files with the same name as ones already in the repository replace them.
 3. Scroll down and click **Commit changes**.
 
-When it's done, the repository should list `icons/`, `index.html`, `manifest.webmanifest`, `README.md` and `sw.js`.
+When it's done, the repository should list ``, `index.html`, `manifest.webmanifest`, `README.md` and `sw.js`.
 
 ### 3. Turn on GitHub Pages
 
@@ -72,7 +72,7 @@ Pagecraft then opens full-screen from its own icon, and works offline after the 
 ## Updating Pagecraft later
 
 1. In the repository, click **Add file → Upload files** and upload the changed files. Files with the same name are replaced.
-2. Open `sw.js`, click the pencil icon to edit, and change `pagecraft-v1` to `pagecraft-v2` (then `v3`, and so on, each time you update). Click **Commit changes**.
+2. Open `sw.js`, click the pencil icon to edit, and change the version number at the top, for example `pagecraft-v2` to `pagecraft-v3` (then `v4`, and so on, each time you update). Click **Commit changes**.
 3. Installed copies pick up the new version the next time they're opened with an internet connection, sometimes on the second launch. Journal entries are not affected.
 
 ---
@@ -80,7 +80,7 @@ Pagecraft then opens full-screen from its own icon, and works offline after the 
 ## Troubleshooting
 
 - **The link shows a 404 page.** Wait a few minutes after turning on Pages, and check that `index.html` is at the top level of the repository, not inside a folder.
-- **The icon is missing.** The repository needs an `icons` folder with all six image files inside it. If dragging the folder didn't work (some versions of Safari don't support it), upload it again from Chrome, Edge or Firefox. Or create it by hand: click **Add file → Create new file**, type `icons/placeholder.txt` as the name, commit, open the new `icons` folder, use **Add file → Upload files** to add the six images, then delete `placeholder.txt`.
+- **The icon is missing, or the phone says the app is already installed but it won't open.** Check that all six `.png` files are at the top level of the repository next to `index.html`. Then on the phone, uninstall the old Pagecraft (long-press the icon → App info → Uninstall), reopen the link in Chrome, wait for it to load, and install again.
 - **Changes don't show up.** Make sure you bumped the version in `sw.js`, then close and reopen the app.
 
 ---
@@ -92,4 +92,4 @@ Pagecraft then opens full-screen from its own icon, and works offline after the 
 | `index.html` | The whole app |
 | `manifest.webmanifest` | App name, icon and colors for installing to a home screen |
 | `sw.js` | Lets the app open offline and keeps copies of fonts |
-| `icons/` | App icons (`icon-1024.png` is a full-size master copy) |
+| `*.png` | App icons (`icon-1024.png` is a full-size master copy) |
